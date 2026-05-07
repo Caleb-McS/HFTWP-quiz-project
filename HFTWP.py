@@ -1,9 +1,12 @@
-"""FINISH THIS LATERER IF NOT ME FAIL AND CRY"""
+"""This is a quiz program about hunt for the wilderpeople. By Caleb M 8th of May 2026"""
+
 import os
 os.system('cls')
 amo = 0
 orde = ["0","1","2","3","4","5","6","7"]
 opt = ["1", "2", "3", "4"]
+awnse = 0
+
 ques = {
     "All of the following characters are in the film except..." : 4,
     "Who did Ricky name his dog after?" : 1,
@@ -23,12 +26,25 @@ awns = [
     "1: 0\n2: 1\n3: 2\n4: 3", 
     "1: 0\n2: 1\n3: 2\n4: 3"
 ]
+
 for i in ques:
     print(i)
     print(awns[amo])
     amo += 1
-    awnse = int(input(""))
-    if awnse in opt:
-        print(hmm)
-    else:
-        print("invalid input")
+    print(ques[i])
+    try:    
+        awnse = int(input(""))
+    except:
+
+        try:
+            print("Invalid input. Please input a number of 1-4.")
+            awnse = int(input(""))
+        except:
+            continue
+    if awnse == ques[i]:
+        print("Correct!")
+    elif awnse != ques[i]:
+        if awnse > 4 or awnse < 1:
+            print("Invalid input")
+        else:
+            print("Incorrect...")
