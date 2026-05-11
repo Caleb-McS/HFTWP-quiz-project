@@ -7,6 +7,7 @@ amo = 0
 orde = ["0","1","2","3","4","5","6","7"]
 opt = [1, 2, 3, 4]
 awnse = 0
+score = 0
 
 ques = {
     "All of the following characters are in the film except..." : 4,
@@ -49,11 +50,12 @@ for i in ques:
                 continue
     if awnse == ques[i]:
         print("Correct!")
-        time.sleep('3')
+        score =+ 1
+        time.sleep(2)
     elif awnse != ques[i]:
         if awnse > 4 or awnse < 1:
             print("Invalid input")
-            time.sleep('3')
+            time.sleep(2)
             while awnse not in opt:
                 try:
                     print("Invalid input. Please input 1, 2, 3 or 4.")
@@ -62,4 +64,6 @@ for i in ques:
                     continue
         else:
             print("Incorrect...")
-            time.sleep('3')
+            time.sleep(3)
+finalsc = score / 8
+print (finalsc)
