@@ -1,10 +1,11 @@
 """This is a quiz program about hunt for the wilderpeople. By Caleb M 8th of May 2026"""
 
+import time
 import os
 os.system('cls')
 amo = 0
 orde = ["0","1","2","3","4","5","6","7"]
-opt = ["1", "2", "3", "4"]
+opt = [1, 2, 3, 4]
 awnse = 0
 
 ques = {
@@ -28,23 +29,37 @@ awns = [
 ]
 
 for i in ques:
+    os.system('cls')
     print(i)
     print(awns[amo])
     amo += 1
-    print(ques[i])
+    #print(ques[i])
     try:    
         awnse = int(input(""))
     except:
-
-        try:
-            print("Invalid input. Please input a number of 1-4.")
-            awnse = int(input(""))
-        except:
-            continue
+        while awnse not in opt:
+            try:
+                os.system('cls')
+                print("Invalid input. Please input 1, 2, 3 or 4.")
+                print("")
+                print(i)
+                print(awns[amo])
+                awnse = int(input(""))
+            except:
+                continue
     if awnse == ques[i]:
         print("Correct!")
+        time.sleep('3')
     elif awnse != ques[i]:
         if awnse > 4 or awnse < 1:
             print("Invalid input")
+            time.sleep('3')
+            while awnse not in opt:
+                try:
+                    print("Invalid input. Please input 1, 2, 3 or 4.")
+                    awnse = int(input(""))
+                except:
+                    continue
         else:
             print("Incorrect...")
+            time.sleep('3')
