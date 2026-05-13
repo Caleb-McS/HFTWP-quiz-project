@@ -33,7 +33,7 @@ awns = [
     "1: No\n2: Yes\n3: It wasn't in the movie\n4: Maybe",
     "1: Sonnets\n2: Acrostic\n3: Haikus\n4: He doesn't like poems."
 ]
-#Asking the questions in the quiz
+#asking the questions in the quiz
 for i in ques:
     os.system('cls')
     print(i)
@@ -75,7 +75,7 @@ for i in ques:
         print(f"Incorrect... The awnser was {ques[i]}")
         quesorde = quesorde + 1
         time.sleep(2)
-#Final score resault
+#Final score result
 finalsc = score * 10
 if finalsc < 3:
     print(f"Did you watch the movie? \nYou only got {finalsc}% of the questions correct.")
@@ -83,3 +83,4 @@ elif finalsc < 8:
     print(f"You got {finalsc}% of the questions correct!")
 else:
     print(f"Wow you got {finalsc}% correct! \nWell done.")
+input("Press enter to end the quiz.")
